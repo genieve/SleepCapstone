@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Alarm: Hashable {
+struct Alarm: Codable, Hashable {
     var alarm: Date
     var hourMinAlarm: String {
         formatDateToStringHrMin(date: alarm)

@@ -11,8 +11,13 @@
 		5E1213B52A70120900F88C30 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1213B42A70120900F88C30 /* ScheduleView.swift */; };
 		5E1213B72A70120A00F88C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1213B62A70120A00F88C30 /* Assets.xcassets */; };
 		5E1213BA2A70120A00F88C30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1213B92A70120A00F88C30 /* Preview Assets.xcassets */; };
+		5E586FBF2A8E6AF4000F4858 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E586FBE2A8E6AF4000F4858 /* ContentView.swift */; };
+		5E586FC12A8E700D000F4858 /* SleepWake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E586FC02A8E700D000F4858 /* SleepWake.swift */; };
+		5E586FC32A8E8ABC000F4858 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E586FC22A8E8ABC000F4858 /* AlarmManager.swift */; };
 		5E5B89442A716ED200F67FA1 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B89432A716ED200F67FA1 /* TimeView.swift */; };
 		5E9336702A7AB3030061FDBA /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E93366F2A7AB3030061FDBA /* Alarm.swift */; };
+		5ED670D82A8BC6BB002FE077 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED670D72A8BC6BB002FE077 /* Date.swift */; };
+		5ED670DA2A8BCD5F002FE077 /* SetupDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED670D92A8BCD5F002FE077 /* SetupDate.swift */; };
 		5EE4DA562A78068500913EEE /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4DA552A78068500913EEE /* AlarmView.swift */; };
 		5EE4DA582A7806A600913EEE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4DA572A7806A600913EEE /* Colors.swift */; };
 /* End PBXBuildFile section */
@@ -23,8 +28,13 @@
 		5E1213B42A70120900F88C30 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		5E1213B62A70120A00F88C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E1213B92A70120A00F88C30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5E586FBE2A8E6AF4000F4858 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5E586FC02A8E700D000F4858 /* SleepWake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepWake.swift; sourceTree = "<group>"; };
+		5E586FC22A8E8ABC000F4858 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		5E5B89432A716ED200F67FA1 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		5E93366F2A7AB3030061FDBA /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		5ED670D72A8BC6BB002FE077 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5ED670D92A8BCD5F002FE077 /* SetupDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDate.swift; sourceTree = "<group>"; };
 		5EE4DA552A78068500913EEE /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		5EE4DA572A7806A600913EEE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +89,7 @@
 		5E5B89452A716EE700F67FA1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E586FBE2A8E6AF4000F4858 /* ContentView.swift */,
 				5E1213B42A70120900F88C30 /* ScheduleView.swift */,
 				5E5B89432A716ED200F67FA1 /* TimeView.swift */,
 				5EE4DA552A78068500913EEE /* AlarmView.swift */,
@@ -91,6 +102,10 @@
 			children = (
 				5EE4DA572A7806A600913EEE /* Colors.swift */,
 				5E93366F2A7AB3030061FDBA /* Alarm.swift */,
+				5E586FC22A8E8ABC000F4858 /* AlarmManager.swift */,
+				5ED670D72A8BC6BB002FE077 /* Date.swift */,
+				5ED670D92A8BCD5F002FE077 /* SetupDate.swift */,
+				5E586FC02A8E700D000F4858 /* SleepWake.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,10 +181,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1213B52A70120900F88C30 /* ScheduleView.swift in Sources */,
+				5ED670DA2A8BCD5F002FE077 /* SetupDate.swift in Sources */,
 				5EE4DA582A7806A600913EEE /* Colors.swift in Sources */,
+				5ED670D82A8BC6BB002FE077 /* Date.swift in Sources */,
 				5E1213B32A70120900F88C30 /* AlexisWrightCapstoneApp.swift in Sources */,
+				5E586FC12A8E700D000F4858 /* SleepWake.swift in Sources */,
+				5E586FBF2A8E6AF4000F4858 /* ContentView.swift in Sources */,
 				5EE4DA562A78068500913EEE /* AlarmView.swift in Sources */,
 				5E5B89442A716ED200F67FA1 /* TimeView.swift in Sources */,
+				5E586FC32A8E8ABC000F4858 /* AlarmManager.swift in Sources */,
 				5E9336702A7AB3030061FDBA /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

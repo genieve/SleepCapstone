@@ -11,7 +11,7 @@ import SwiftUI
 struct AlexisWrightCapstoneApp: App {
     var body: some Scene {
         WindowGroup {
-            ScheduleView()
+            ContentView()
         }
     }
 }

@@ -11,7 +11,6 @@ struct TimeView: View {
 
     var sleepWake: SleepWake
     var userSetBedtime: Alarm
-
     
     let colors = Colors()
     
@@ -24,14 +23,14 @@ struct TimeView: View {
     var alarms: [Alarm] {
         willGoToSleep ? generateMorningAlarms(userSetBedtime.alarm) : generateEveningAlarms(userSetBedtime.alarm)
     }
-    var numInArray = 0
+        
+//    var alarmManager = AlarmManager()
     
     @State private var showingAlert = false
     @State private var alertTitle = ""
     @State var alarm: Alarm = Alarm(alarm: Date())
     
     @Environment(\.dismiss) private var dismiss
-    
     @EnvironmentObject var setDate: SetupDate
     
     var body: some View {
@@ -47,12 +46,15 @@ struct TimeView: View {
                 } //Intro Text + Goal Time
                 Spacer()
                 List {
-                    ForEach(alarms, id: \.self) { selectedAlarm in
-                        
-                        Text(selectedAlarm.hourMinAlarm)
-                            .foregroundColor(numInArray > 1 ? .green : .red)
+                    ForEach(alarms.indices, id: \.self) { index in
+                        Text(alarms[index].hourMinAlarm)
+                            .foregroundColor(listTextColor(index, sleepWake))
                             .onTapGesture {
-                                alarm = selectedAlarm
+                                if sleepWake == .wakeUp {
+                                    alarm = userSetBedtime
+                                } else {
+                                    alarm = alarms[index]
+                                }
                                 showingAlert = true
                                 alertTitle = "Set Alarm"
                             }
@@ -73,8 +75,14 @@ struct TimeView: View {
 //                NavigationLink("Set Alarm", destination: AlarmView(alarm: alarm))
                 Button("Save Alarm") {
                     AlarmManager.shared.currentAlarm = alarm
-                    AlarmManager.shared.save()
+                    AlarmManager.shared.alarmStartTime = Date.now
+                    AlarmManager.shared.saveData()
+                    
                     dismiss()
+                    //Set @published variable to specify when the alarm was set
+                    //date.now -> Save that to alarmManager too
+                    //
+                    
                 }
                     // might also need to
                     // navigationPath = []
@@ -83,6 +91,36 @@ struct TimeView: View {
             }
             
         }
+    }
+    
+    func listTextColor(_ listNumber: Int, _ sleepWake: SleepWake) -> Color {
+        let wakeUpHours = hoursBetweenAlarmAndNow(alarms[listNumber].alarm, userSetBedtime.alarm)
+        let sleepHours = hoursBetweenAlarmAndNow(userSetBedtime.alarm, alarms[listNumber].alarm)
+        switch sleepWake {
+        case .wakeUp:
+            if wakeUpHours >= 7 {
+                return Color(colors.green)
+            } else if wakeUpHours < 7 && wakeUpHours > 3 {
+                return Color(colors.yellow)
+            } else {
+                return Color(colors.red)
+            }
+        case .goToSleep:
+            if sleepHours >= 7 {
+                return Color(colors.green)
+            } else if sleepHours < 7 && sleepHours >= 4 {
+                return Color(colors.yellow)
+            } else {
+                return Color(colors.red)
+            }
+        }
+    }
+    private func hoursBetweenAlarmAndNow(_ alarmTime: Date, _ now: Date) -> Int {
+        let components = Calendar.current.dateComponents([.hour], from: alarmTime, to: now)
+        if let hours = components.hour {
+            return hours
+        }
+        return -1
     }
     
     private func generateMorningAlarms(_ setTime: Date) -> [Alarm] {
@@ -109,7 +147,10 @@ struct TimeView: View {
             bedtime = calendar.date(byAdding: .minute, value: -90, to: bedtime) ?? Date()
             myAlarms.append(Alarm(alarm: bedtime))
         }
-        return myAlarms.reversed()
+        
+//        return myAlarms.reversed()
+//        let testAlarms: [Alarm] = [Alarm(alarm: calendar.date(byAdding: .minute, value: 60, to: setTime)!)]
+        return myAlarms
     }
 }
 

@@ -31,6 +31,7 @@ struct ScheduleView: View {
                 } //I want to [Something] at [Time]
                 NavigationLink(destination: TimeView(sleepWake: sleepOrWake, userSetBedtime: sleepTime)) {
                     Text("Go")
+                        .font(.system(size: 32))
                 }
             }
             .padding(20)

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 enum AppView: Codable, Hashable {
     case scheduleView(Alarm)
@@ -18,14 +19,18 @@ struct ContentView: View {
     @State var navigationPath: [AppView] = []
     @ObservedObject var alarmManager = AlarmManager.shared
 //    @ObservedObject var alarmSet = false
+    
     var body: some View {
         NavigationStack(path: $navigationPath) {
             // if alarm is currently going
             // show alarmView
             // else
             // show ScheduleView
-            if alarmManager.currentAlarm != nil {
-                AlarmView(alarm: alarmManager.currentAlarm!)
+            if alarmManager.currentAlarm != nil &&
+                alarmManager.alarmPassed != nil &&
+                !alarmManager.alarmPassed! {
+                let currentAlarm = alarmManager.loadAlarm()
+                AlarmView(alarm: currentAlarm!)
             } else {
                 ScheduleView()
                     .navigationDestination(for: AppView.self) { appView in
@@ -43,9 +48,27 @@ struct ContentView: View {
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
 
+/* MARK:  Check if the alarm in the past code
+ if alarmManager.currentAlarm != nil {
+ if (alarmManager.currentAlarm?.alarm.timeIntervalSince1970)! < Date().timeIntervalSince1970 {
+     ScheduleView()
+         .navigationDestination(for: AppView.self) { appView in
+             switch appView {
+             case .scheduleView(_):
+                 ScheduleView()
+             case .timeView(let sleepWake, let alarm):
+                 TimeView(sleepWake: sleepWake, userSetBedtime: alarm)
+             case .alarmView(let alarm):
+                 AlarmView(alarm: alarm)
+             }
+         }
+ } else {
+     AlarmView(alarm: alarmManager.currentAlarm!)
+ }*/

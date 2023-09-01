@@ -10,7 +10,7 @@ import Foundation
 enum SleepWake: Codable, Hashable, CaseIterable, Identifiable {
     case goToSleep
     case wakeUp
-    case wakeUpBefore
+//    case wakeUpBefore
     var id: Self { self }
     
     var description: String {
@@ -19,8 +19,8 @@ enum SleepWake: Codable, Hashable, CaseIterable, Identifiable {
             return "Wake Up"
         case .goToSleep:
             return "Go To Sleep"
-        case .wakeUpBefore:
-            return "Wake Up Before"
+//        case .wakeUpBefore:
+//            return "Wake Up Before"
         }
     }
 }

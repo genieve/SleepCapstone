@@ -16,6 +16,7 @@
 		5E586FC32A8E8ABC000F4858 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E586FC22A8E8ABC000F4858 /* AlarmManager.swift */; };
 		5E5B89442A716ED200F67FA1 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B89432A716ED200F67FA1 /* TimeView.swift */; };
 		5E9336702A7AB3030061FDBA /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E93366F2A7AB3030061FDBA /* Alarm.swift */; };
+		5EC163882A9CEF8C00843AE8 /* AlarmTimeRemaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC163872A9CEF8C00843AE8 /* AlarmTimeRemaining.swift */; };
 		5ED670D82A8BC6BB002FE077 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED670D72A8BC6BB002FE077 /* Date.swift */; };
 		5ED670DA2A8BCD5F002FE077 /* SetupDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED670D92A8BCD5F002FE077 /* SetupDate.swift */; };
 		5EE4DA562A78068500913EEE /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4DA552A78068500913EEE /* AlarmView.swift */; };
@@ -33,6 +34,7 @@
 		5E586FC22A8E8ABC000F4858 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		5E5B89432A716ED200F67FA1 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		5E93366F2A7AB3030061FDBA /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		5EC163872A9CEF8C00843AE8 /* AlarmTimeRemaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTimeRemaining.swift; sourceTree = "<group>"; };
 		5ED670D72A8BC6BB002FE077 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		5ED670D92A8BCD5F002FE077 /* SetupDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDate.swift; sourceTree = "<group>"; };
 		5EE4DA552A78068500913EEE /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				5E586FC22A8E8ABC000F4858 /* AlarmManager.swift */,
 				5ED670D72A8BC6BB002FE077 /* Date.swift */,
 				5ED670D92A8BCD5F002FE077 /* SetupDate.swift */,
+				5EC163872A9CEF8C00843AE8 /* AlarmTimeRemaining.swift */,
 				5E586FC02A8E700D000F4858 /* SleepWake.swift */,
 			);
 			path = Models;
@@ -191,6 +194,7 @@
 				5E5B89442A716ED200F67FA1 /* TimeView.swift in Sources */,
 				5E586FC32A8E8ABC000F4858 /* AlarmManager.swift in Sources */,
 				5E9336702A7AB3030061FDBA /* Alarm.swift in Sources */,
+				5EC163882A9CEF8C00843AE8 /* AlarmTimeRemaining.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

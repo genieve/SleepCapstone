@@ -16,4 +16,14 @@ struct Colors {
     
     let green = CGColor(red: 0.592156862745098, green: 0.8588235294117647, blue: 0.30980392156862746, alpha: 1)
     let yellow = CGColor(red: 0.9921568627450981, green: 0.9058823529411765, blue: 0.2980392156862745, alpha: 1)
+    let red = CGColor(red: 0.749, green: 0.149, blue: 0.231, alpha: 1)
+    
+    func alarmListColor(_ listNumber: Int) -> CGColor {
+        if listNumber >= 0 && listNumber <= 2 {
+            return green
+        } else if listNumber > 2 && listNumber <= 4 {
+            return yellow
+        }
+        return red
+    }
 }

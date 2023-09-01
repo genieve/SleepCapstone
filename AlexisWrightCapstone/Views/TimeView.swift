@@ -75,7 +75,9 @@ struct TimeView: View {
 //                NavigationLink("Set Alarm", destination: AlarmView(alarm: alarm))
                 Button("Save Alarm") {
                     AlarmManager.shared.currentAlarm = alarm
+                    let alarmWasSet = Date.now
                     AlarmManager.shared.alarmStartTime = Date.now
+                    print("\(AlarmManager.shared.alarmStartTime)")
                     AlarmManager.shared.saveData()
                     
                     dismiss()

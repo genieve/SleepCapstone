@@ -20,7 +20,7 @@ struct AlarmView: View {
     @State private var sleepOrWake: SleepWake = .goToSleep
     
     @State private var startedBlinking = false
-    let startTime = AlarmManager.shared.alarmStartTime?.timeIntervalSince1970
+    
     
     
     var body: some View {
@@ -53,7 +53,7 @@ struct AlarmView: View {
                     let value = timeRemaining(for: context.date) //Pass in Time Remaining into the Alarm Value
                     let alarmTimeRemaining = AlarmTimeRemaining(alarmStart: context.date, alarmEnd: alarm.alarm)
                     
-                    
+                    let startTime = AlarmManager.shared.alarmStartTime?.timeIntervalSince1970
                     
                     
                     ZStack {
@@ -147,7 +147,7 @@ struct AlarmView: View {
         //use timeintervalsince1970
         //do the END DATE - CURRENT DATE
         guard AlarmManager.shared.currentAlarm != nil else { return 0 }
-        guard let startTime = AlarmManager.shared.alarmStartTime?.timeIntervalSince1970 else { return 0 } //coming back 0 if you exit the app
+        guard let startTime = AlarmManager.shared.alarmStartTime?.timeIntervalSince1970 else { return 1 } //coming back 0 if you exit the app
         
         let currentTime = Double(date.timeIntervalSince1970)
         let endTime = Double(alarm.alarm.timeIntervalSince1970)
@@ -159,10 +159,10 @@ struct AlarmView: View {
         let totalAlarmMinutes = totalAlarmTime / 60
         
         let result = minutesLeftInAlarm / totalAlarmMinutes
-        print("startTime: \(startTime)")
-        print("Current Time: \(currentTime)")
-        print("endTime: \(endTime)")
-        
+//        print("startTime: \(startTime)")
+//        print("Current Time: \(currentTime)")
+//        print("endTime: \(endTime)")
+//        
         
         return result
     }

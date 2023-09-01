@@ -19,6 +19,9 @@ struct ContentView: View {
     @State var navigationPath: [AppView] = []
     @ObservedObject var alarmManager = AlarmManager.shared
 //    @ObservedObject var alarmSet = false
+//    alarmManager.alarmStartTime = alarmManager.loadStartTime()
+    
+
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
@@ -29,8 +32,7 @@ struct ContentView: View {
             if alarmManager.currentAlarm != nil &&
                 alarmManager.alarmPassed != nil &&
                 !alarmManager.alarmPassed! {
-                let currentAlarm = alarmManager.loadAlarm()
-                AlarmView(alarm: currentAlarm!)
+                AlarmView(alarm: alarmManager.currentAlarm!)
             } else {
                 ScheduleView()
                     .navigationDestination(for: AppView.self) { appView in

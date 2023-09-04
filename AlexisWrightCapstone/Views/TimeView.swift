@@ -64,6 +64,7 @@ struct TimeView: View {
                 .listStyle(.insetGrouped)
                 .font(.system(size: 40))
                 .fontWeight(.bold)
+                Text("Alarms are based on 90 minute sleep cycles")
             } //Total Content
             .padding(30)
             .alert(alertTitle, isPresented: $showingAlert) {
@@ -75,11 +76,10 @@ struct TimeView: View {
 //                NavigationLink("Set Alarm", destination: AlarmView(alarm: alarm))
                 Button("Save Alarm") {
                     AlarmManager.shared.currentAlarm = alarm
-                    let alarmWasSet = Date.now
                     AlarmManager.shared.alarmStartTime = Date.now
-                    print("\(AlarmManager.shared.alarmStartTime)")
+//                    print("startTime before Save \(AlarmManager.shared.alarmStartTime)")
                     AlarmManager.shared.saveData()
-                    
+//                    print("start time after Save \(AlarmManager.shared.alarmStartTime)")
                     dismiss()
                     //Set @published variable to specify when the alarm was set
                     //date.now -> Save that to alarmManager too
@@ -145,13 +145,25 @@ struct TimeView: View {
         
         var myAlarms: [Alarm] = []
         var bedtime = calendar.date(byAdding: .minute, value: -90, to: setTime)!
-        for _ in 0...5 {
-            bedtime = calendar.date(byAdding: .minute, value: -90, to: bedtime) ?? Date()
-            myAlarms.append(Alarm(alarm: bedtime))
+        
+        var timePassed: Bool {
+            setTime.timeIntervalSince1970 < Date().timeIntervalSince1970
         }
         
-//        return myAlarms.reversed()
-//        let testAlarms: [Alarm] = [Alarm(alarm: calendar.date(byAdding: .minute, value: 60, to: setTime)!)]
+        if timePassed {
+            bedtime = calendar.date(byAdding: .hour, value: 24, to: bedtime)!
+        }
+        
+//        print("bedtime: \(bedtime)")
+        for _ in 0...5 {
+            bedtime = calendar.date(byAdding: .minute, value: -90, to: bedtime) ?? Date()
+            if bedtime.timeIntervalSince1970 < Date().timeIntervalSince1970 {
+                continue
+            } else {
+                myAlarms.append(Alarm(alarm: bedtime))
+            }
+        }
+        
         return myAlarms
     }
 }

@@ -52,9 +52,7 @@ struct AlarmView: View {
                     
                     let value = timeRemaining(for: context.date) //Pass in Time Remaining into the Alarm Value
                     let alarmTimeRemaining = AlarmTimeRemaining(alarmStart: context.date, alarmEnd: alarm.alarm)
-                    
-                    let startTime = AlarmManager.shared.alarmStartTime?.timeIntervalSince1970
-                    
+                                        
                     
                     ZStack {
                         Circle()
@@ -70,8 +68,8 @@ struct AlarmView: View {
                         
                         VStack {
                             Text("Alarm \(alarmPassed ? "went off at": "will go off at")")
-                            Text("\(value)")
-                            Text("\(startTime?.description ?? "nil")")
+//                            Text("\(value)")
+//                            Text("\(startTime?.description ?? "nil")")
                             Text(alarm.hourMinAlarm)
                                 .font(.system(size: 30))
                             
@@ -147,8 +145,8 @@ struct AlarmView: View {
         //use timeintervalsince1970
         //do the END DATE - CURRENT DATE
         guard AlarmManager.shared.currentAlarm != nil else { return 0 }
+//        print(AlarmManager.shared.alarmStartTime)
         guard let startTime = AlarmManager.shared.alarmStartTime?.timeIntervalSince1970 else { return 1 } //coming back 0 if you exit the app
-        
         let currentTime = Double(date.timeIntervalSince1970)
         let endTime = Double(alarm.alarm.timeIntervalSince1970)
         

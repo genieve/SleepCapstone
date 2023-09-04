@@ -7,81 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DF35F620-6231-4877-A838-16C05314D77A"
+            uuid = "C9710156-E8BF-4648-834C-FE65E43914CC"
             shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlexisWrightCapstone/Models/AlarmManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "init()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "02EB0ED1-233B-41B5-BAD3-6119282F48A9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlexisWrightCapstone/Views/TimeView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DE1F7C32-6272-45FC-A99E-B47F1E1027AB"
-            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AlexisWrightCapstone/Views/AlarmView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "AlarmView"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E7AB6299-EF86-44EE-BCDB-BAC8BAD78405"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlexisWrightCapstone/Models/AlarmManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "loadStartTime()"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "timeRemaining(for:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AD5365E1-7428-47F3-B917-8DACBCC3AB0D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlexisWrightCapstone/Models/AlarmManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "init()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9710156-E8BF-4648-834C-FE65E43914CC - 36ed18dee53d46c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlexisWrightCapstone.AlarmView.timeRemaining(for: Foundation.Date) -&gt; Swift.Double"
+                  moduleName = "AlexisWrightCapstone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexis/Desktop/Mobile%20Development%20-%20Swift/AlexisWrightCapstone/AlexisWrightCapstone/Views/AlarmView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "1132">
+               </Location>
+               <Location
+                  uuid = "C9710156-E8BF-4648-834C-FE65E43914CC - 36ed18dee53d46c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlexisWrightCapstone.AlarmView.timeRemaining(for: Foundation.Date) -&gt; Swift.Double"
+                  moduleName = "AlexisWrightCapstone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexis/Desktop/Mobile%20Development%20-%20Swift/AlexisWrightCapstone/AlexisWrightCapstone/Views/AlarmView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "852">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
